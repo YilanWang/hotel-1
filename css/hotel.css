@@ -1,0 +1,139 @@
+ header,section,footer,aside,nav,article,figure,figcaption{
+            display: block;
+        }
+        body{
+            color: black;
+            background-color: #f9f8f6;
+            background-image: url('http://pic.58pic.com/58pic/13/17/90/78h58PICBU3_1024.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            font-family: "Microsift YaHei", Georgia, 'Times New Roman', Times, serif;
+            line-height: 2em;
+        }
+
+        /*.wrapper{
+            width:     
+        }*/
+        .titleblock{
+            width: 12%;
+            /*height: 220px;*/
+            height: 40%;
+            background-color: black;
+            filter: alpha(opacity=30);
+            opacity: 0.8;
+            color: white;
+            background-repeat: repeat-y;
+            float: left;
+            padding: 0;
+        }
+        
+        .image1{
+            display: block;
+            width: 80%;
+            text-align: center;
+            margin: 10% auto;
+            float: center top;
+        }
+        h2.h2_title{
+            font-family: 'Microsoft YaHei',Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+            text-align: center;
+        }
+        .discount{
+            filter: alpha(opacity=30);
+            opacity: 0.8;
+            border: 0px;
+            color: #f5f5f5;
+            background-color: black;
+            float: right;
+            margin: 0 10% 0 0;
+            padding: 0;
+            display: block;
+            width: 20%;
+            height: 500px;
+            font-family: "Microsoft YaHei Light","Microsoft YaHei",Georgia, 'Times New Roman', Times, serif;
+
+        }
+        h1.h1_dis{
+            font-size: 20px;
+            text-align: center;
+        }
+        .hotelName{
+            font-size: 18px;
+            text-align: center;
+        }
+        .roomRate{
+            font-size: 10px;
+            text-align: left;
+        }
+        .specialRate{
+            font-size: 25px;
+            color: #FF6600;
+            text-align: center;
+        }
+        .fontSizeChange{
+            font-size: 15px;
+        }
+        .offerEnds{
+            text-align: center;
+            color: #FF6600;
+            font-size: 15px;
+        }
+
+        .table{
+            width: 40%;
+            /*height:40%;*/
+            background-color: black;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            border: 0;
+            margin-left: 18%;
+            padding: 0;
+            float:left;
+            display: block;
+            font-family: "Microsoft YaHei",Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            color: white;
+        }
+
+        .table_title{
+            
+            height: 30%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            position: relative;
+        } 
+        .table_title ul{
+            list-style-type: none;
+        }
+        .table_title li{
+            float: left;
+            width: 25%;
+            height: 100%;
+           
+            text-align: center;
+            /*padding: 0;*/
+        }
+        .table_title a:link,.table_title li a:visited{
+            text-decoration: none;
+            color: white;
+        }
+        .table_title li a:hover{
+            color: 
+            #FF6600;
+        }
+        .table_title li.select{
+            background-color: #444444;
+            opacity: 0.9;
+            padding: 0;
+            margin: 0;
+        }
+        .table .table-content .tabct{
+            margin: 6% 6% 6% 6%
+        }
+        .table .table-content .tabct p{
+            float: center;
+        }
