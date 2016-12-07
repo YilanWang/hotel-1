@@ -1,0 +1,92 @@
+.pv-bg{
+    width: 799px;
+    height: 479px;
+    position: absolute;
+    border-top: 1px solid #444444;
+    border-right: 1px solid #444444;
+    background-color: rgba(0, 0, 0, 0.8);
+    float: left;
+    display: block;
+    margin-left:10%; 
+    margin-top: 220px;
+    color: white;
+    font-family: "Microsift YaHei", Georgia, 'Times New Roman', Times, serif;
+    overflow: auto;
+}
+.gallery{
+  width: 400px;
+  padding: 20px;
+  margin-left:7%; 
+  float: left;
+
+}
+#photo-viewer{
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+
+}
+
+#photo-viewer.is-loading:after{
+    content: url('E:/迅雷下载/javascript-and-jquery-book-code-0915/javascript-and-jquery-book-code-0915/c11/img/load.gif');
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+#photo-viewer img{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top:50%;
+    left: 50%;
+}
+
+#thumbnails{
+    margin: 10px 5px 0 0;
+    height: 60px;
+}
+
+#thumbnails a.active{
+    opacity: 0.3;
+}
+
+
+.description {
+  width: 200px;
+  float: right;
+  margin-right: 5%; 
+  /*margin-top: 2%;*/
+  padding: 20px 20px 0 0;
+  font-size: 85%;
+  line-height: 1.5em;}
+
+.standfirst {
+  margin: 0;}
+
+
+/********** BUY BUTTON **********/
+a#buy {
+  background-color: #ed8e6c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 10px 9px 10px;
+  margin: 5px 0 20px 0;
+  float: right;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;}
+
+a#buy:hover {background-color: #ed612f;}
+
+#billboard {text-align: center;}
+.js-warning {display: none;}
+
+.no-js .js-warning {
+  display: block;
+  border: 3px solid #fff;
+  text-align: center;
+  background-color: #fff;
+  color: #db5391;
+  padding: 10px;}
