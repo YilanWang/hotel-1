@@ -1,14 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 5.0 Transitional//EN">
 <html>
     <head>
         <meta charset="utf-8">
-        <!--<script src="//cdn.bootcss.com/jquery/3.1.1/core.js"></script>-->
-      <!--  <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>-->
         <link type="text/css" rel="stylesheet" href="./css/hotel.css">
         <link type="text/css" rel="stylesheet" href="./css/pv.css">
-        <title>山·风·岚</title>
+        <title>山·风</title>
     </head>
     <body>
+        <div class="layout">
         <div class="titleblock" id="titleblock">
             <img src="http://hiphotos.baidu.com/zhidao/pic/item/d11609243560dd42d4074285.jpg" class="image1" alt="岚" />
             <h2 class="h2_title">山风酒馆</h2>
@@ -40,9 +39,23 @@
 
     
         </div>
-
-
-
+        
+        <div class="pv-bg">
+            <div class="gallery">
+                <div id="photo-viewer"></div>
+                <div id="thumbnails">
+                    <a href="http://ww1.sinaimg.cn/mw690/a6abd2b6jw1fail12yhxjj20ci08c3yz.jpg" class="thumb active" title="美景1"><img src="http://ww3.sinaimg.cn/mw690/a6abd2b6jw1faifda9x6sj202301ejr5.jpg"/></a>
+                    <a href="http://ww2.sinaimg.cn/mw690/a6abd2b6jw1fail13gv5lj20ci08cgm2.jpg" class="thumb" title="美景2"><img src="http://ww2.sinaimg.cn/mw690/a6abd2b6jw1faifdc8oeij202301egld.jpg"/></a>
+                    <a href="http://ww3.sinaimg.cn/mw690/a6abd2b6jw1fail142vt2j20ci08cjrs.jpg" class="thumb" title="美景3"><img src="http://ww1.sinaimg.cn/mw690/a6abd2b6jw1faifdd5oy7j202301e741.jpg"/></a>
+                </div>
+           </div>
+           <div class="description">
+        <p>上方：导航切换栏使用JS，分为标题部分和内容，若标题数和内容数相等，则给标题添加id，当鼠标指向某个标题，消去其他标题和内容的描述，同时给此id的标题和内容添加相应对象使其正确显示.</p>
+        <p>左边图片查看器，使用jquery，当指向小图时获取对应大图href，将现存图片渐隐，加载对应的图片；同时把响应过的图片保存，当下一次加载已经点击过的图片时，则不需要重新创建img，可直接加载.</p>
+        <p>右侧显示时间及对应星期.点击预约后有好事发生</p>
+            </div>
+       </div>
+       </div>
         <div class="discount">
             <h1 class="h1_dis" >近期优惠</h1>
             <div style="width:80%; height:1px; margin:10% auto; background-color:white; padding:0px; overflow:hidden;"></div>
@@ -53,29 +66,20 @@
             <br /><br />
             <div class="hotelName" class="fontSizeChange">若预订2晚及以上则享受优惠</div>
             <div id="offerEnds" class="offerEnds">oe</div>
+            <!--<div><a id="buy" onclick="popBuy('newId');">立即预约</a></div>-->
+            <div class="buy"><a onclick="openLogin();" id="buy">立即预约</a></div>
+            <div id="back" style="display:none; position:absolute; left:0; top:0; width:100%; height:100%; background-color:#444444; opacity:0.5"></div>
+            <div id="win" style="display:none; position:absolute; left:50%; top:50%; width:360px; height:400px; margin-left:-180px; margin-top:-200px; opacity:1; background-color:white; text-align:center; border-radius:10px">
+            <p><a onclick="closeLogin();" style="float:right;margin-right:20px;color:black; cursor:pointer; font-size:20px;">×</a></p><br />
+            <p><img src='https://mobilecodec.alipay.com/show.htm?code=apx08471tcs1ocjmcabva66&picSize=M' width='200px' height='200px' style="margin:0px auto;"></p>
+             <p style="color:black">哪有酒馆啊，真想预约？不如直接打钱给我支付宝吧</p></div>
+           </div>
         </div>
 
-        <div class="pv-bg">
-            <div class="gallery">
-                <div id="photo-viewer"></div>
-                <div id="thumbnails">
-                    <a href="http://ww1.sinaimg.cn/mw690/a6abd2b6jw1fail12yhxjj20ci08c3yz.jpg" class="thumb active" title="美景1"><img src="http://ww3.sinaimg.cn/mw690/a6abd2b6jw1faifda9x6sj202301ejr5.jpg"/></a>
-                    <a href="http://ww2.sinaimg.cn/mw690/a6abd2b6jw1fail13gv5lj20ci08cgm2.jpg" class="thumb" title="美景2"><img src="http://ww2.sinaimg.cn/mw690/a6abd2b6jw1faifdc8oeij202301egld.jpg"/></a>
-                    <a href="http://ww3.sinaimg.cn/mw690/a6abd2b6jw1fail142vt2j20ci08cjrs.jpg" class="thumb" title="美景3"><img src="http://ww1.sinaimg.cn/mw690/a6abd2b6jw1faifdd5oy7j202301e741.jpg"/></a>
-                </div>
-           </div>
-                 <div class="description">
-        <p>最上方：导航切换栏使用javascript，分为标题部分和内容(链接未加)，核心是若标题数和内容数相等，则给标题添加id，当鼠标指向某个标题，消去其他标题和内容的描述，同时给此id的标题和内容添加相应对象使其正确显示.</p>
-        <p>左边的图片查看器，使用jquery，核心方法是当指向小图时获取此小图对应的大图href，将现存的图片渐隐，加载对应的图片；同时把响应过的图片的信息保存，当下一次加载已经点击过的图片时，则不需要重新创建img，可直接加载.</p>
-        <p>右侧则是简单js，练习获取和显示时间及对应星期.</p>
-        
-      </div>
-       </div>
- 
         <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
         <script src="./js/hotelxxk.js"></script>
         <script src="./js/disanzhang1.js"></script>
         <script src="./js/pv.js"></script>
-        
+        <script src="./js/pop2.js"></script>
     </body>
 </html>
