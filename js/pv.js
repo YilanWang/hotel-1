@@ -1,69 +1,69 @@
-var request;                         // Latest image to be requested
-var $current;                        // Image currently being shown 
-var cache = {};                      // Cache object
-var $frame = $('#photo-viewer');     // Container for image
-var $thumbs = $('.thumb');           // Thumbnails
+var request;                        
+var $current;                       
+var cache = {};                      
+var $frame = $('#photo-viewer');     
+var $thumbs = $('.thumb');          
 
-function crossfade($img) {           // Function to fade between images
-                                     // Pass in new image as parameter
-  if ($current) {                    // If there is currently an image showing
-    $current.stop().fadeOut('slow'); // Stop any animation & fade it out
+function crossfade($img) {          
+                                    
+  if ($current) {                    
+    $current.stop().fadeOut('slow');
   }
 
-  $img.css({                         // Set the CSS margins for the image
-    marginLeft: -$img.width() / 2,   // Negative margin of half image's width
-    marginTop: -$img.height() / 2    // Negative margin of half image's height
+  $img.css({                        
+    marginLeft: -$img.width() / 2,   
+    marginTop: -$img.height() / 2   
   });
 
-  $img.stop().fadeTo('slow', 1);     // Stop animation on new image & fade in
+  $img.stop().fadeTo('slow', 1);    
   
-  $current = $img;                   // New image becomes current image
+  $current = $img;                   
 
 }
 
-$(document).on('click', '.thumb', function(e){ // When a thumb is clicked on
-  var $img,                               // Create local variable called $img
-      src = this.href;                    // Store path to image
-      request = src;                      // Store latest image request
+$(document).on('click', '.thumb', function(e){ 
+  var $img,                              
+      src = this.href;                   
+      request = src;                     
   
-  e.preventDefault();                     // Stop default link behavior
+  e.preventDefault();                   
   
-  $thumbs.removeClass('active');          // Remove active from all thumbs
-  $(this).addClass('active');             // Add active to clicked thumb
+  $thumbs.removeClass('active');          
+  $(this).addClass('active');           
 
-  if (cache.hasOwnProperty(src)) {        // If cache contains this image
-    if (cache[src].isLoading === false) { // And if isLoading is false
-      crossfade(cache[src].$img);         // Call crossfade() function
+  if (cache.hasOwnProperty(src)) {        
+    if (cache[src].isLoading === false) { 
+      crossfade(cache[src].$img);         
     }
-  } else {                                // Otherwise it is not in cache
-    $img = $('<img/>');                   // Store empty <img/> element in $img
-    cache[src] = {                        // Store this image in cache
-      $img: $img,                         // Add the path to the image
-      isLoading: true                     // Set isLoading property to false
+  } else {                              
+    $img = $('<img/>');                  
+    cache[src] = {                       
+      $img: $img,                        
+      isLoading: true                     
     };
 
-    // Next few lines will run when image has loaded but are prepared first
-    $img.on('load', function(){           // When image has loaded
-      $img.hide();                        // Hide it
-      // Remove is-loading class from frame & append new image to it
+  
+    $img.on('load', function(){          
+      $img.hide();                      
+     
       $frame.removeClass('is-loading').append($img);
-      cache[src].isLoading = false;       // Update isLoading in cache
-      // If still most recently requested image then
+      cache[src].isLoading = false;      
+     
       if (request === src) {
-        crossfade($img);                  // Call crossfade() function
-      }                                   // Solves asynchronous loading issue
+        crossfade($img);                
+      }                               
     });
 
-    $frame.addClass('is-loading');        // Add is-loading class to frame
+    $frame.addClass('is-loading');       
 
-    $img.attr({                           // Set attributes on <img> element
-      'src': src,                         // Add src attribute to load image
-      'alt': this.title || ''             // Add title if one was given in link
+    $img.attr({                          
+      'src': src,                        
+      'alt': this.title || ''            
     });
 
   }
 
 });
 
-// Final line runs once when rest of script has loaded to show the first image
-$('.thumb').eq(0).click();                // Simulate click on first thumb
+
+$('.thumb').eq(0).click();               
